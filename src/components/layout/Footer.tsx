@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="relative z-10 w-full px-6 py-12 flex flex-col items-center border-t border-white/20 mt-12 bg-black/10 backdrop-blur-sm">
+    <footer className="relative z-10 w-full px-6 py-12 flex flex-col items-center border-t border-white/20 mt-12 bg-black/10 backdrop-blur-sm snap-start">
       <div className="max-w-6xl w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
         <div className="flex flex-col items-center md:items-start opacity-80 hover:opacity-100 transition-opacity">
            <Image src="/assets/logo-svgs/white.svg" alt="Transpo" width={48} height={48} className="mb-2" unoptimized />
            <span className="font-calistoga font-bold tracking-wide text-white">make it yours.</span>
            <div className="flex gap-4 mt-4 text-white">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all cursor-pointer">
+              <a href="https://www.instagram.com/transpo.studio/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all cursor-pointer">

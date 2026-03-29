@@ -24,8 +24,7 @@ export default function Home() {
     <main className="relative min-h-screen font-sans">
       <AnimatedBackground />
 
-      <div className={`${showSplash ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}>
-        <Navbar onLogoClick={handleReplay} />
+      <div className={`${showSplash ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000 h-screen overflow-y-auto snap-y snap-mandatory`}>
         <Hero />
         
         <ScrollSpyLayout>
@@ -37,6 +36,8 @@ export default function Home() {
 
         <Footer />
       </div>
+
+      {!showSplash && <Navbar onLogoClick={handleReplay} />}
 
       {showSplash && (
         <SplashHeroTransition onComplete={() => setShowSplash(false)} />

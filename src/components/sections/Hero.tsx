@@ -9,7 +9,7 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-40 px-6 flex flex-col items-center justify-start text-white">
+    <section id="hero" className="relative min-h-screen pt-40 px-6 flex flex-col items-center justify-start text-white snap-start">
       <motion.div 
         className="text-center max-w-3xl flex flex-col items-center z-10"
         initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ export function Hero() {
 
         <button 
           onClick={() => scrollToLink('signup')}
-          className="bg-cta-bg text-cta-fg px-8 py-3 rounded-lg font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:brightness-110 transition-all duration-300"
+          className="bg-cta-bg text-cta-fg px-8 py-3 rounded-lg font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:brightness-110 transition-all duration-300 cursor-pointer"
         >
           Get Early Access
         </button>

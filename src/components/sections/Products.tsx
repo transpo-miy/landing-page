@@ -14,7 +14,7 @@ export function Products() {
           </div>
           
           <div className="w-full flex justify-center">
-             <button className="bg-white text-black px-8 py-3 rounded-full flex items-center gap-4 hover:scale-105 hover:bg-gray-100 transition-all shadow-xl font-bold group">
+             <button className="bg-white text-black px-8 py-3 rounded-full flex items-center gap-4 hover:scale-105 hover:bg-gray-100 transition-all shadow-xl font-bold group cursor-pointer">
                <div className="w-6 h-6 rounded-full bg-blue-500 overflow-hidden relative flex justify-center items-center shadow-sm -ml-2">
                  {/* Fake chrome icon styling */}
                  <div className="w-2.5 h-2.5 bg-white rounded-full z-10 absolute shadow-sm"></div>
