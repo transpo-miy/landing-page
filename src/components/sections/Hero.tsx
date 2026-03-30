@@ -9,7 +9,7 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-40 px-6 flex flex-col items-center justify-start text-white snap-start">
+    <section id="hero" className="relative min-h-screen pt-40 px-6 flex flex-col items-center justify-start text-white">
       <motion.div 
         className="text-center max-w-3xl flex flex-col items-center z-10"
         initial={{ opacity: 0, y: 20 }}

@@ -16,6 +16,21 @@ const calistoga = Calistoga({
 export const metadata: Metadata = {
   title: "Transpo | Music, your way.",
   description: "Transpo detects the key of any audio in real time — so your music adapts to you.",
+  keywords: ["music", "key detection", "chrome extension", "transpo", "real-time audio analysis"],
+  openGraph: {
+    title: "Transpo | Music, your way.",
+    description: "Transpo detects the key of any audio in real time.",
+    url: "https://transpo.studio",
+    siteName: "Transpo",
+    images: [{ url: "/opengraph-image.png" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Transpo | Music, your way.",
+    description: "Transpo detects the key of any audio in real time.",
+    images: ["/twitter-image.png"],
+  },
 };
 
 export default function RootLayout({

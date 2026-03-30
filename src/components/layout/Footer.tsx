@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="relative z-10 w-full px-6 py-12 flex flex-col items-center border-t border-white/20 mt-12 bg-black/10 backdrop-blur-sm snap-start">
+    <footer className="relative z-10 w-full px-6 py-12 flex flex-col items-center border-t border-white/20 mt-12 bg-black/10 backdrop-blur-sm">
       <div className="max-w-6xl w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
         <div className="flex flex-col items-center md:items-start opacity-80 hover:opacity-100 transition-opacity">
            <Image src="/assets/logo-svgs/white.svg" alt="Transpo" width={48} height={48} className="mb-2" unoptimized />

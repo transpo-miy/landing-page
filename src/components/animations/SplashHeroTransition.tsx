@@ -36,12 +36,12 @@ export function SplashHeroTransition({ onComplete }: { onComplete: () => void })
             className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-orange to-brand-yellow"
             initial={{ 
               width: '90vw', 
-              height: '90vh', 
+              height: '90dvh', 
               borderRadius: '32px',
             }}
             animate={{
               width: isExpanding ? '100vw' : '90vw',
-              height: isExpanding ? '100vh' : '90vh',
+              height: isExpanding ? '100dvh' : '90dvh',
               borderRadius: isExpanding ? '0px' : '32px',
             }}
             transition={{
@@ -50,7 +50,7 @@ export function SplashHeroTransition({ onComplete }: { onComplete: () => void })
             }}
           >
             <motion.div
-              className="relative flex items-center justify-center gap-10 md:gap-16 z-10 w-full px-12"
+              className="relative flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 z-10 w-full px-12"
               animate={{
                 opacity: isExpanding ? 0 : 1,
                 scale: isExpanding ? 1.05 : 1,
@@ -62,9 +62,9 @@ export function SplashHeroTransition({ onComplete }: { onComplete: () => void })
                 <Image src="/assets/logo-svgs/white.svg" alt="Transpo Logo" width={140} height={140} priority className="drop-shadow-xl" unoptimized />
               </div>
 
-              {/* Center: Vertical Line with Dot */}
-              <div className="h-32 flex flex-col items-center justify-center shrink-0">
-                 <div className="w-[2px] h-full bg-white/70 relative">
+               {/* Center: Divider Line */}
+              <div className="md:h-32 w-32 md:w-auto flex items-center justify-center shrink-0 my-4 md:my-0">
+                 <div className="h-[2px] w-full md:w-[2px] md:h-full bg-white/70 relative">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
                  </div>
               </div>

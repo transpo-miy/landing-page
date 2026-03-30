@@ -24,7 +24,7 @@ export default function Home() {
     <main className="relative min-h-screen font-sans">
       <AnimatedBackground />
 
-      <div className={`${showSplash ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000 h-screen overflow-y-auto snap-y snap-mandatory`}>
+      <div className={`${showSplash ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}>
         <Hero />
         
         <ScrollSpyLayout>

@@ -2,7 +2,7 @@ import React from 'react';
 
 export function SectionWrapper({ id, title,  children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="min-h-[85vh] py-20 flex items-center justify-center relative z-10 w-full scroll-mt-24 snap-start">
+    <section id={id} className="min-h-[85vh] py-20 flex items-center justify-center relative z-10 w-full scroll-mt-24">
       <div className="w-full bg-gradient-to-br from-[#4A2B14]/95 to-[#3B2210]/95 backdrop-blur-xl rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-10 md:p-16 border border-white/5 relative overflow-hidden flex justify-center group transition-shadow hover:shadow-[0_25px_70px_rgba(0,0,0,0.4)]">
         {/* Subtle inner light bursts for "soul" and depth */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.03] blur-3xl rounded-full pointer-events-none group-hover:bg-white/[0.04] transition-colors duration-700" />
