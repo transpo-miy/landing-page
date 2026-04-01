@@ -7,10 +7,15 @@ export function Products() {
           <h2 className="font-calistoga text-3xl md:text-4xl text-white font-bold mb-4 w-full text-center">Our first product is live</h2>
           <p className="text-white/80 mb-10 text-lg text-center font-medium">Real-time key detection, directly in your browser.</p>
           
-          <div className="w-full aspect-[16/9] bg-[#D9D9D9] rounded-xl mb-12 flex items-center justify-center shadow-inner overflow-hidden relative">
-             <div className="absolute inset-0 flex items-center justify-center border-4 border-[#3A220F] rounded-xl">
-                <span className="text-black/30 font-semibold text-xl tracking-widest uppercase blur-[1px] select-none">[ Demo UI Loop ]</span>
-             </div>
+          <div className="w-full aspect-[16/9] bg-black rounded-xl mb-12 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.4)] overflow-hidden relative border border-white/10">
+            <video 
+              src="/assets/videos/demo-loop.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover"
+            />
           </div>
           
           <div className="w-full flex justify-center">

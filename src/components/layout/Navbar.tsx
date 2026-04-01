@@ -3,19 +3,35 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 interface NavbarProps {
-	onLogoClick: () => void;
+	// Logo click handler removed as it's now handled internally
 }
 
-export function Navbar({ onLogoClick }: NavbarProps) {
+export function Navbar({}: NavbarProps = {}) {
 	const [isOpen, setIsOpen] = useState(false);
+	const pathname = usePathname();
+	const router = useRouter();
 
 	const scrollTo = (id: string) => {
 		setIsOpen(false);
+		if (pathname !== "/") {
+			router.push(`/#${id}`);
+			return;
+		}
 		const el = document.getElementById(id);
 		if (el) {
 			el.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
+	const handleLogoClick = () => {
+		setIsOpen(false);
+		if (pathname !== "/") {
+			router.push("/#hero");
+		} else {
+			scrollTo("hero");
 		}
 	};
 
@@ -30,10 +46,7 @@ export function Navbar({ onLogoClick }: NavbarProps) {
 				<div className="flex items-center justify-between p-2 pr-4 md:pr-6 bg-white rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.15)] border border-white/80 w-full h-[72px] relative z-20">
 					{/* Logo */}
 					<button
-						onClick={() => {
-							setIsOpen(false);
-							onLogoClick();
-						}}
+						onClick={handleLogoClick}
 						className="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-gray-100 hover:scale-[1.03] transition-transform duration-300 relative group cursor-pointer"
 						aria-label="Replay transition"
 					>

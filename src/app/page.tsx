@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useLayoutEffect, useEffect } from 'react';
 import { SplashHeroTransition } from '@/components/animations/SplashHeroTransition';
 import { AnimatedBackground } from '@/components/animations/AnimatedBackground';
 import { Navbar } from '@/components/layout/Navbar';
@@ -12,13 +12,20 @@ import { Support } from '@/components/sections/Support';
 import { FeedbackForm } from '@/components/forms/FeedbackForm';
 import { SignupForm } from '@/components/forms/SignupForm';
 
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
-  function handleReplay() {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    setShowSplash(true);
-  }
+  useIsomorphicLayoutEffect(() => {
+    // Only play the splash on the very first load of the session
+    const hasPlayed = sessionStorage.getItem('transpoSplashPlayed');
+    if (hasPlayed) {
+      setShowSplash(false);
+    } else {
+      sessionStorage.setItem('transpoSplashPlayed', 'true');
+    }
+  }, []);
 
   return (
     <main className="relative min-h-screen font-sans">
@@ -37,7 +44,7 @@ export default function Home() {
         <Footer />
       </div>
 
-      {!showSplash && <Navbar onLogoClick={handleReplay} />}
+      {!showSplash && <Navbar />}
 
       {showSplash && (
         <SplashHeroTransition onComplete={() => setShowSplash(false)} />

@@ -56,21 +56,6 @@ export default function RootLayout({
 			lang="en"
 			className={`${inter.variable} ${calistoga.variable} h-full antialiased`}
 		>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Transpo",
-						applicationCategory: "MusicApplication",
-						operatingSystem: "Chrome",
-						description:
-							"Real-time key detection tool that analyzes audio and identifies musical keys instantly.",
-						url: "https://transpo.studio",
-					}),
-				}}
-			/>
 			<body className="min-h-full flex flex-col font-sans bg-background text-foreground scroll-smooth">
 				{children}
 			</body>

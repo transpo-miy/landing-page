@@ -84,3 +84,15 @@ Colors are parameterized in `globals.css` using the Tailwind v4 `@theme` block:
 - `--color-brand-orange`: `#E65100` (Burnt Orange)
 - `--color-brand-yellow`: `#E1A33C` (Gradient gold)
 - `--color-brand-cta`: `#1B263B` (Deep Navy)
+
+---
+
+## 📄 Dynamic Content Routing (Markdown Pages)
+
+To efficiently manage text-heavy pages like the **FAQ**, **Terms of Service**, and **Privacy Policy**, the application uses a dynamic Markdown rendering architecture. This prevents the need to write boilerplate `.tsx` files for static text.
+
+### Implementation Details
+- **Routing**: Handled by the dynamic Next.js App Router catch-all `src/app/[slug]/page.tsx`.
+- **Parsing**: `gray-matter` is used to extract YAML frontmatter (metadata like titles and last updated dates).
+- **Rendering**: The raw markdown content is securely rendered using `react-markdown` and styled using Tailwind typography utility wrappers built directly into the container.
+- **Agentic Reusability**: Covered under the `.agents/skills/markdown-pages/SKILL.md` skill, ensuring future agent collaborators understand how to easily provision new pages by simply creating files in `src/content/`.

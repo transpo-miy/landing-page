@@ -89,7 +89,7 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<span className="font-bold text-white mb-2">Products</span>
 						<a
-							href="#"
+							href="#products"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							extensions
@@ -111,13 +111,13 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<span className="font-bold text-white mb-2">Resources</span>
 						<a
-							href="#"
+							href="/faq"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							FAQs
 						</a>
 						<a
-							href="#"
+							href="#support"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							Support
@@ -133,13 +133,13 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<span className="font-bold text-white mb-2">Legal</span>
 						<a
-							href="#"
+							href="/terms"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							Terms
 						</a>
 						<a
-							href="#"
+							href="/privacy"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							Privacy Policy
