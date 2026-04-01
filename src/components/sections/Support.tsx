@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SectionWrapper } from "../layout/SectionWrapper";
 
 export function Support() {
@@ -15,12 +16,12 @@ export function Support() {
 					product, our support lines are open.
 				</p>
 				<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-					<a href="/faq" className="bg-white text-[#4A2B14] shadow-lg hover:shadow-xl hover:-translate-y-1 px-8 py-3 rounded-full font-bold transition-all w-full sm:w-auto">
+					<Link href="/faq" className="bg-white text-[#4A2B14] shadow-lg hover:shadow-xl hover:-translate-y-1 px-8 py-3 rounded-full font-bold transition-all w-full sm:w-auto text-center">
 						Read FAQs
+					</Link>
+					<a href="mailto:support@transpo.studio" className="border-2 border-white/20 hover:bg-white/10 text-white px-8 py-3 rounded-full font-bold transition-colors w-full sm:w-auto text-center">
+						Contact Us
 					</a>
-					{/* <button className="border-2 border-white/20 hover:bg-white/10 text-white px-8 py-3 rounded-full font-bold transition-colors w-full sm:w-auto">
-						Visit Help Center
-					</button> */}
 				</div>
 			</div>
 		</SectionWrapper>

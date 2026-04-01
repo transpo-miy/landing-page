@@ -30,3 +30,13 @@ Below the frontmatter, write the page's content using standard Markdown (`#` for
 
 **Step 4. Update Navigation (Optional)**
 If the user requests the new page to be linked, update `src/components/layout/Footer.tsx` or `src/components/layout/Navbar.tsx` with a standard HTML anchor text linking to the new slug (e.g., `<a href="/about">About</a>`).
+
+---
+
+## 🎨 Design & Navigation Preferences
+When editing or expanding the Transpo Landing Page, you **must adhere** to the following established rules as defined by the user:
+
+1. **Splash Screen Rule**: The splash animation triggers **only** on the very first visit of a session (using `sessionStorage` in `page.tsx`). Do **not** trigger it manually on navigation clicks. Navigating back from a subpage should perfectly bypass the animation without glitches.
+2. **Logo Routing**: The Transpo Navbar Logo acts strictly as a scroll-to-top feature on the home page, and a link to `/#hero` on subpages. Never use an `href="/"` tag that forces a hard reload, use `router.push('/#hero')`.
+3. **Visual Aesthetics**: All new pages must retain the home page's ambient styling. Markdown pages are automatically wrapped in a dark-mode, glassmorphic container spanning `#4A2B14/95` to `#3B2210/95` with the `<AnimatedBackground />` layered safely behind it. Do not attempt to use solid color backgrounds (like `bg-background`) on `<main>` tags that will obscure the ambient animated particles. 
+4. **Media Placement**: When placing video Demo UI loops, they belong exclusively in the **Products** section. The Hero demo simulates the extension interaction manually and statically.

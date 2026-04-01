@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
 	return (
@@ -88,12 +89,12 @@ export function Footer() {
 				<div className="flex gap-16 text-sm text-white flex-wrap justify-center">
 					<div className="flex flex-col gap-3">
 						<span className="font-bold text-white mb-2">Products</span>
-						<a
-							href="#products"
+						<Link
+							href="/#products"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							extensions
-						</a>
+						</Link>
 						{/* <a
 							href="#"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
@@ -110,18 +111,18 @@ export function Footer() {
 
 					<div className="flex flex-col gap-3">
 						<span className="font-bold text-white mb-2">Resources</span>
-						<a
+						<Link
 							href="/faq"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							FAQs
-						</a>
-						<a
-							href="#support"
+						</Link>
+						<Link
+							href="/#support"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							Support
-						</a>
+						</Link>
 						{/* <a
 							href="#"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
@@ -132,18 +133,18 @@ export function Footer() {
 
 					<div className="flex flex-col gap-3">
 						<span className="font-bold text-white mb-2">Legal</span>
-						<a
+						<Link
 							href="/terms"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							Terms
-						</a>
-						<a
+						</Link>
+						<Link
 							href="/privacy"
 							className="opacity-70 hover:opacity-100 hover:text-brand-orange"
 						>
 							Privacy Policy
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

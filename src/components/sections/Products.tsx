@@ -1,4 +1,6 @@
 import { SectionWrapper } from '../layout/SectionWrapper';
+import Image from "next/image";
+
 
 export function Products() {
   return (
@@ -20,13 +22,14 @@ export function Products() {
           
           <div className="w-full flex justify-center">
              <button className="bg-white text-black px-8 py-3 rounded-full flex items-center gap-4 hover:scale-105 hover:bg-gray-100 transition-all shadow-xl font-bold group cursor-pointer">
-               <div className="w-6 h-6 rounded-full bg-blue-500 overflow-hidden relative flex justify-center items-center shadow-sm -ml-2">
-                 {/* Fake chrome icon styling */}
-                 <div className="w-2.5 h-2.5 bg-white rounded-full z-10 absolute shadow-sm"></div>
-                 <div className="absolute inset-0 bg-[#ea4335]"></div>
-                 <div className="absolute top-1/2 bottom-0 left-0 right-1/2 bg-[#fbbc05]"></div>
-                 <div className="absolute top-1/2 bottom-0 left-1/2 right-0 bg-[#34a853]"></div>
-               </div>
+                
+                <Image src="/assets/logo-svgs/chrome-icon.svg"
+                              alt="Chrome Extension"
+                              width={40}
+                              height={40}
+                              className="relative z-10"
+                              unoptimized
+                            />
                <div className="flex flex-col text-left leading-tight py-1">
                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wide">Chrome Extension</span>
                  <span className="text-sm">Download <span className="inline-block group-hover:translate-x-1 transition-transform">↗</span></span>

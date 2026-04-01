@@ -14,16 +14,28 @@ import { SignupForm } from '@/components/forms/SignupForm';
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
+// Persistent flag to track if splash has played during the current client-side session.
+// This prevents the splash from rendering at all when navigating back to Home via Next.js Link.
+let splashPlayedThisSession = false;
+
 export default function Home() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !splashPlayedThisSession && !sessionStorage.getItem('transpoSplashPlayed');
+    }
+    return true;
+  });
 
   useIsomorphicLayoutEffect(() => {
     // Only play the splash on the very first load of the session
     const hasPlayed = sessionStorage.getItem('transpoSplashPlayed');
     if (hasPlayed) {
       setShowSplash(false);
+      splashPlayedThisSession = true;
     } else {
       sessionStorage.setItem('transpoSplashPlayed', 'true');
+      // We don't set splashPlayedThisSession to true here yet,
+      // it will be set once the animation completes or if we navigate away.
     }
   }, []);
 
@@ -47,7 +59,12 @@ export default function Home() {
       {!showSplash && <Navbar />}
 
       {showSplash && (
-        <SplashHeroTransition onComplete={() => setShowSplash(false)} />
+        <SplashHeroTransition 
+          onComplete={() => {
+            setShowSplash(false);
+            splashPlayedThisSession = true;
+          }} 
+        />
       )}
     </main>
   );
