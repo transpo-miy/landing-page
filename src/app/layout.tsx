@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Transpo | Music, your way.",
 		description: "Transpo detects the key of any audio in real time.",
-		url: "https://transpo.studio",
+		url: "https://www.transpo.studio",
 		siteName: "Transpo",
 		images: [{ url: "/opengraph-image.png" }],
 		type: "website",
