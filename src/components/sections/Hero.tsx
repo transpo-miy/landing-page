@@ -14,7 +14,7 @@ export function Hero() {
         className="text-center max-w-3xl flex flex-col items-center z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.8, duration: 0.8 }}
+        transition={{ delay: 0.75, duration: 0.8 }}
       >
         <h1 className="text-5xl md:text-7xl font-calistoga font-bold tracking-tight mb-4 drop-shadow-sm">
           Music, your way
@@ -36,7 +36,7 @@ export function Hero() {
         className="mt-16 w-full max-w-5xl z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.2, duration: 1 }}
+        transition={{ delay: 1.0, duration: 1 }}
       >
         <DemoCard />
       </motion.div>
