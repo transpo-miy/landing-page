@@ -1,7 +1,7 @@
 export default function sitemap() {
 	return [
 		{
-			url: "https://transpo.studio",
+			url: "https://www.transpo.studio",
 			lastModified: new Date(),
 		},
 	];
