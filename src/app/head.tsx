@@ -12,7 +12,7 @@ export default function Head() {
 						operatingSystem: "Chrome",
 						description:
 							"Real-time key detection tool that analyzes audio and identifies musical keys instantly.",
-						url: "https://transpo.studio",
+						url: "https://www.transpo.studio",
 					}),
 				}}
 			/>

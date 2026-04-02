@@ -6,6 +6,6 @@ export default function robots() {
 				allow: "/",
 			},
 		],
-		sitemap: "https://transpo.studio/sitemap.xml",
+		sitemap: "https://www.transpo.studio/sitemap.xml",
 	};
 }
