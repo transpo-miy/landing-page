@@ -35,17 +35,30 @@ export function Navbar({}: NavbarProps = {}) {
 		}
 	};
 
+	// Variants for entrance animation to prevent re-triggering on internal state change
+	const navVariants = {
+		hidden: { y: -100, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+		},
+	};
+
 	return (
 		<motion.nav
 			className="fixed top-8 left-1/2 -translate-x-1/2 z-[100] w-[94%] max-w-4xl"
-			initial={{ y: -100, opacity: 0 }}
-			animate={{ y: 0, opacity: 1 }}
-			transition={{ delay: 0.8, duration: 0.8 }}
+			variants={navVariants}
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true }}
+			transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+			layout
 		>
 			<div className="relative">
 				<div className="flex items-center justify-between p-2 pr-4 md:pr-6 bg-white rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.15)] border border-white/80 w-full h-[72px] relative z-20">
 					{/* Logo */}
 					<button
+						type="button"
 						onClick={handleLogoClick}
 						className="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-gray-100 hover:scale-[1.03] transition-transform duration-300 relative group cursor-pointer"
 						aria-label="Replay transition"
@@ -64,6 +77,7 @@ export function Navbar({}: NavbarProps = {}) {
 					{/* Desktop Links */}
 					<div className="hidden md:flex flex-1 items-center justify-center gap-12 text-sm font-semibold text-gray-600 cursor-pointer">
 						<button
+							type="button"
 							onClick={() => scrollTo("products")}
 							className="hover:text-brand-orange transition-colors tracking-wide cursor-pointer"
 						>
@@ -71,6 +85,7 @@ export function Navbar({}: NavbarProps = {}) {
 						</button>
 						<div className="w-[1px] h-8 bg-gray-200" />
 						<button
+							type="button"
 							onClick={() => scrollTo("support")}
 							className="hover:text-brand-orange transition-colors tracking-wide cursor-pointer"
 						>
@@ -78,6 +93,7 @@ export function Navbar({}: NavbarProps = {}) {
 						</button>
 						<div className="w-[1px] h-8 bg-gray-200" />
 						<button
+							type="button"
 							onClick={() => scrollTo("feedback")}
 							className="hover:text-brand-orange transition-colors tracking-wide cursor-pointer"
 						>
@@ -87,6 +103,7 @@ export function Navbar({}: NavbarProps = {}) {
 
 					{/* Desktop CTA */}
 					<button
+						type="button"
 						onClick={() => scrollTo("signup")}
 						className="hidden md:flex bg-[#D19039] text-white px-7 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-brand-orange hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 tracking-wide cursor-pointer"
 					>
@@ -95,6 +112,7 @@ export function Navbar({}: NavbarProps = {}) {
 
 					{/* Mobile Menu Toggle */}
 					<button
+						type="button"
 						className="md:hidden flex flex-col justify-center items-center w-10 h-10 text-gray-700 gap-1.5 hover:text-brand-orange transition-colors ml-auto mr-1 cursor-pointer"
 						onClick={() => setIsOpen(!isOpen)}
 						aria-label="Toggle Navigation"
@@ -122,6 +140,7 @@ export function Navbar({}: NavbarProps = {}) {
 						>
 							<div className="flex flex-col items-center pt-4 border-b border-gray-100 mx-4">
 								<button
+									type="button"
 									onClick={() => scrollTo("products")}
 									className="w-full py-4 text-center font-bold text-gray-700 hover:text-brand-orange active:bg-gray-50 rounded-xl transition-colors cursor-pointer"
 								>
@@ -130,6 +149,7 @@ export function Navbar({}: NavbarProps = {}) {
 							</div>
 							<div className="flex flex-col items-center border-b border-gray-100 mx-4">
 								<button
+									type="button"
 									onClick={() => scrollTo("support")}
 									className="w-full py-4 text-center font-bold text-gray-700 hover:text-brand-orange active:bg-gray-50 rounded-xl transition-colors cursor-pointer"
 								>
@@ -138,6 +158,7 @@ export function Navbar({}: NavbarProps = {}) {
 							</div>
 							<div className="flex flex-col items-center border-b border-gray-100 mx-4 mb-4">
 								<button
+									type="button"
 									onClick={() => scrollTo("feedback")}
 									className="w-full py-4 text-center font-bold text-gray-700 hover:text-brand-orange active:bg-gray-50 rounded-xl transition-colors cursor-pointer"
 								>
@@ -146,6 +167,7 @@ export function Navbar({}: NavbarProps = {}) {
 							</div>
 							<div className="px-6">
 								<button
+									type="button"
 									onClick={() => scrollTo("signup")}
 									className="w-full bg-[#D19039] text-white py-4 rounded-2xl font-bold shadow-md active:-translate-y-0 tracking-wide text-lg text-center cursor-pointer"
 								>
@@ -157,5 +179,6 @@ export function Navbar({}: NavbarProps = {}) {
 				</AnimatePresence>
 			</div>
 		</motion.nav>
+
 	);
 }
