@@ -44,6 +44,12 @@ export const metadata: Metadata = {
 		description: "Transpo detects the key of any audio in real time.",
 		images: ["/twitter-image.png"],
 	},
+	icons: {
+		icon: [
+			{ url: "/favicon.ico" },
+			{ url: "/icon.svg", type: "image/svg+xml" },
+		],
+	},
 };
 
 export default function RootLayout({
