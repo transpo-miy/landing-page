@@ -46,3 +46,51 @@ a[href] {
 button *, a *, [role="button"] * {
   cursor: inherit !important;
 }
+
+/* ====== GPU-accelerated ambient background orbs ====== */
+@keyframes pulse-orb-1 {
+  0%, 100% { transform: scale(1) translateY(0); opacity: 0.15; }
+  50% { transform: scale(1.1) translateY(-30px); opacity: 0.35; }
+}
+@keyframes pulse-orb-2 {
+  0%, 100% { transform: scale(1) translateX(0); opacity: 0.15; }
+  33% { transform: scale(1.25) translateX(-50px); opacity: 0.4; }
+  66% { transform: scale(0.9) translateX(20px); opacity: 0.15; }
+}
+@keyframes pulse-orb-3 {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.2; }
+  50% { transform: scale(1.3) translate(40px, -30px); opacity: 0.2; }
+}
+
+.animate-pulse-orb-1 {
+  animation: pulse-orb-1 12s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.animate-pulse-orb-2 {
+  animation: pulse-orb-2 18s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.animate-pulse-orb-3 {
+  animation: pulse-orb-3 22s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* ====== Hero entrance animations (replaces Framer Motion) ====== */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-card-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-text {
+  animation: hero-fade-up 0.8s ease-out 0.75s both;
+  will-change: transform, opacity;
+}
+.animate-hero-card {
+  animation: hero-card-up 1s ease-out 1s both;
+  will-change: transform, opacity;
+}
+

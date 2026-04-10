@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { DemoCard } from './DemoCard';
 
 export function Hero() {
@@ -10,11 +9,8 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen pt-40 px-6 flex flex-col items-center justify-start text-white">
-      <motion.div 
-        className="text-center max-w-3xl flex flex-col items-center z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.75, duration: 0.8 }}
+      <div 
+        className="text-center max-w-3xl flex flex-col items-center z-10 animate-hero-text"
       >
         <h1 className="text-5xl md:text-7xl font-calistoga font-bold tracking-tight mb-4 drop-shadow-sm">
           Music, your way
@@ -30,16 +26,13 @@ export function Hero() {
           Get Early Access
         </button>
         <p className="mt-4 text-sm text-white/80 font-medium">Be first to try Transpo.</p>
-      </motion.div>
+      </div>
 
-      <motion.div 
-        className="mt-16 w-full max-w-5xl z-10"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.0, duration: 1 }}
+      <div 
+        className="mt-16 w-full max-w-5xl z-10 animate-hero-card"
       >
         <DemoCard />
-      </motion.div>
+      </div>
     </section>
   );
 }

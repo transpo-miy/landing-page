@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -49,7 +48,6 @@ export function DemoCard() {
         
         {/* Right Nav Icons */}
         <div className="flex gap-4 ml-auto px-2 items-center text-white/70">
-           {/* <span className="text-xs cursor-pointer">⍐</span> */}
            <span className="text-sm cursor-pointer">☆</span>
            {/* Active extension icon */}
            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center border-2 border-brand-orange shadow-[0_0_8px_rgba(230,81,0,0.8)] ml-2 p-1">
@@ -71,10 +69,8 @@ export function DemoCard() {
             <div className="w-1/3 h-4 bg-gray-100 rounded animate-pulse" />
         </div>
 
-        {/* Extension floating widget strictly styled like Image 4 */}
-        <motion.div 
-          className="absolute top-4 right-4 w-72 bg-[#12161A] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-white/10 text-white overflow-hidden flex flex-col z-20"
-        >
+        {/* Extension floating widget — pure CSS, no motion wrapper */}
+        <div className="absolute top-4 right-4 w-72 bg-[#12161A] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-white/10 text-white overflow-hidden flex flex-col z-20">
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-white/5">
             <div className="flex items-center gap-2">
@@ -86,15 +82,14 @@ export function DemoCard() {
           
           {/* Main Display */}
           <div className="flex flex-col items-center py-10 relative bg-gradient-to-b from-[#12161A] to-[#1A1E24]">
-            <motion.button 
-              className={`w-36 h-36 rounded-full border border-brand-orange bg-[#282C31] flex items-center justify-center relative cursor-pointer z-10 transition-all duration-300 ${isPlaying ? 'shadow-[0_0_40px_rgba(230,81,0,0.35),inset_0_0_15px_rgba(230,81,0,0.15)]' : 'shadow-[0_0_15px_rgba(230,81,0,0.1)]'}`}
+            <button 
+              type="button"
+              className={`w-36 h-36 rounded-full border border-brand-orange bg-[#282C31] flex items-center justify-center relative cursor-pointer z-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${isPlaying ? 'shadow-[0_0_40px_rgba(230,81,0,0.35),inset_0_0_15px_rgba(230,81,0,0.15)]' : 'shadow-[0_0_15px_rgba(230,81,0,0.1)]'}`}
               onClick={() => {
                 setIsPlaying(!isPlaying);
                 if (isPlaying) setCurrentKey("Stopped");
                 else setCurrentKey("Detecting...");
               }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
             >
               <Image 
                 src="/assets/logo-svgs/transpo-Logo.svg" 
@@ -103,7 +98,7 @@ export function DemoCard() {
                 className={`transition-all duration-300 ${isPlaying ? 'drop-shadow-[0_0_12px_rgba(230,81,0,0.8)] opacity-100' : 'opacity-70'}`}
                 unoptimized
               />
-            </motion.button>
+            </button>
 
             <span className="mt-6 text-[11px] font-bold text-brand-orange uppercase tracking-wider h-5 flex items-center justify-center w-full">
               {isPlaying ? currentKey : "Tap to detect key"}
@@ -137,7 +132,7 @@ export function DemoCard() {
                 </div>
              </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
