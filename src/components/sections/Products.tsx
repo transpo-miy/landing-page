@@ -32,11 +32,11 @@ export function Products() {
                             />
                <div className="flex flex-col text-left leading-tight py-1">
                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wide">Chrome Extension</span>
-                 <span className="text-sm">Download <span className="inline-block group-hover:translate-x-1 transition-transform">↗</span></span>
+                 <a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/transpo-audio-key-detecti/jmgjjkmhdbkpjjkihhlglmggcbomepob?authuser=0&hl=en" className="text-sm">Download <span className="inline-block group-hover:translate-x-1 transition-transform">↗</span></a>
                </div>
              </button>
           </div>
        </div>
     </SectionWrapper>
-  );
+  );  
 }
